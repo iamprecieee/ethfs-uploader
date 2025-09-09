@@ -32,58 +32,89 @@ The script will guide you through:
 ## Expected Output
 
 ```
-╔══════════════════════════════════════════════════════════════╗
-║             ETH File Storage one-command Uploader            ║
-╚══════════════════════════════════════════════════════════════╝
+╔═════════════════════════════════════════════════╗
+║ ╔═════════════════════════════════════════════╗ ║
+║ ║    ETH FILE STORAGE ONE-COMMAND UPLOADER    ║ ║
+║ ╚═════════════════════════════════════════════╝ ║
+╚═════════════════════════════════════════════════╝
 
 [1/4] Checking ethfs-cli installation...
-✅ ethfs-cli is installed and ready!
-
-⚠️  Make sure you have Sepolia ETH for gas fees!
+✅ ethfs-cli is installed and ready
+⚠️ Make sure you have Sepolia ETH for gas fees!
 ℹ️  Get free Sepolia ETH from: https://sepoliafaucet.com
 
-Let's get your upload details:
+╔══════════════════════════╗
+║ ╔══════════════════════╗ ║
+║ ║    UPLOAD DETAILS    ║ ║
+║ ╚══════════════════════╝ ║
+╚══════════════════════════╝
 
 Enter your private key (with or without 0x): 0x123abc...
 
 How would you like to select your file/folder?
 1. 📂 Open file picker dialog (GUI)
 2. ⌨️  Enter file path manually
+Enter your file selection choice: 1
 
-Enter your choice: 1
-ℹ️  Opening file picker dialog...
+[1.2/4] Opening file picker dialog...
 ✅ Selected: /path/to/your/image.jpg
 
 Choose upload type:
 1. blob (recommended - cheaper)
 2. calldata (traditional)
+Enter your upload choice (1 or 2, default: 1): 2
 
-Enter choice (1 or 2, default: 1): 1
+╔══════════════════════════╗
+║ ╔══════════════════════╗ ║
+║ ║    UPLOAD PROCESS    ║ ║
+║ ╚══════════════════════╝ ║
+╚══════════════════════════╝
 
 [2/4] Creating FlatDirectory contract on EthStorage Sepolia...
-✅ FlatDirectory created: 0x97f876bD0f27eEBF4b48AE25E300B57db6C27237
+✅ FlatDirectory created: 0x93995d703...182F7eBD9
 
 [3/4] Uploading image.jpg to EthStorage...
-ℹ️  Upload started. This may take a few seconds...
-  → FlatDirectory: The transaction hash for chunk 0 is 0x2de16cde...
-  → FlatDirectory: Chunks 0,1,2 have been uploaded for image.jpg
-✅ Upload completed successfully!
+ℹ️  Upload started. This may take a few minutes...
+  → ℹ️ INFO:      Provider URL: http://65.108.230.142:8545/
+  → ℹ️ INFO:      Chain ID: 11155111
+  → ℹ️ INFO:      Address: 0x93995d703...182F7eBD9
+  → ℹ️ INFO:      Thread pool size: 6
+  → 
+  → FlatDirectory: The transaction hash for chunk 0 is 0xd3b150702f5706c55770afd24a4723952a1a8798ed4ee0516b99945264ba89ef  image.jpg
+  → FlatDirectory: Chunks 0 have been uploaded for image.jpg.
+  → FlatDirectory: The transaction hash for chunk 1 is 0x94c5931cdc03742a9e0a6cc9fcc734a33af6dc56a9eb3fb6a87f15dab6ed8d5b  image.jpg
+  → FlatDirectory: Chunks 1 have been uploaded for image.jpg.
+  → FlatDirectory: The transaction hash for chunk 2 is 0x94805acb9835023cd62e6ee3b5f004d07f31c54220fb172aa3bb6e9b03a575c9  image.jpg
+  → FlatDirectory: Chunks 2 have been uploaded for image.jpg.
+  → FlatDirectory: The transaction hash for chunk 3 is 0x87ca79820505534f49647435b92462bedce8969aed9a70275708cdb31a1b3be2  image.jpg
+  → FlatDirectory: Chunks 3 have been uploaded for image.jpg.
+  → FlatDirectory: The transaction hash for chunk 4 is 0xc4e320fd8fcf248ad7fb39c5a9de175efa77e602f6f95630a7bed0b1ede3b9b3  image.jpg
+  → FlatDirectory: Chunks 4 have been uploaded for image.jpg.
+  → FlatDirectory: The transaction hash for chunk 5 is 0x4d8a9773f9afc585ab9a066bf937295b70431fe002680410d75c25fb2cc98385  image.jpg
+  → FlatDirectory: Chunks 5 have been uploaded for image.jpg.
+  → 
+  → 
+  → ✅  FINISH:    Total files: 1
+  → ✅  FINISH:    Total chunks uploaded: 5
+  → ✅  FINISH:    Total data uploaded: 1248.138671875 KB
+  → ✅  FINISH:    Total storage cost: 0.0 ETH
+
+
+    🎊🎊⭐🚀🚀 Upload completed successfully 🎊🎊⭐🚀🚀
+
 
 [4/4] Generating access URLs...
+✅ 🎉 Upload Complete
 
-🎉 Upload Complete!
-
-Contract Address: 0x97f876bD0f27eEBF4b48AE25E300B57db6C27237
+Contract Address: 0x93995d703...182F7eBD9
 Chain ID: 11155111 (EthStorage Sepolia)
 
 Access your files:
-Web3 URL: web3://0x97f876bD0f27eEBF4b48AE25E300B57db6C27237:3333/image.jpg
-Gateway:  https://0x97f876bd0f27eebf4b48ae25e300b57db6c27237.3333.w3link.io/image.jpg
+ Web3 URL: web3://0x93995d703...182F7eBD9:3333/image.jpg
+ Gateway:  https://0x93995d703...182F7eBD9.3333.w3link.io/image.jpg
 
 Need to download files later?
-ethfs-cli download -a 0x97f876bD0f27eEBF4b48AE25E300B57db6C27237 -c 11155111 -f image.jpg
-
-Thanks for using ETH File Storage one-command Uploader! 🚀
+ethfs-cli download -a 0x93995d703...182F7eBD9 -c 11155111 -f <filename>
 ```
 
 ## Troubleshooting
